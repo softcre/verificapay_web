@@ -117,7 +117,7 @@ class Migration_Create_table_usuarios extends CI_Migration
          * Initial users
          */
 
-        $password = '$2y$12$A92EDmhdwPhCNWcul4pLezyobmNbgG6R2Kq7AGEiDw05G9cayY5C';
+        $password = '$2a$12$sp/C2Lteakyaj3Pwd6vt9O1X5t8MjwSkbNsPmSH.qEBfnZ9Jnc.6u';
 
         /*
          * Administrator

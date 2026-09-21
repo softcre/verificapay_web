@@ -31,6 +31,57 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <style>
+        :root {
+            --vp-blue: #012549;
+            --vp-green: #00b8a4;
+            --bs-primary: var(--vp-blue);
+            --bs-primary-rgb: 1, 37, 73;
+            --bs-link-color: var(--vp-blue);
+            --bs-link-hover-color: var(--vp-green);
+            --bs-btn-primary-bg: var(--vp-blue);
+            --bs-btn-primary-border-color: var(--vp-blue);
+            --bs-btn-primary-hover-bg: #021d37;
+            --bs-btn-primary-hover-border-color: #021d37;
+        }
+
+        body {
+            background: linear-gradient(180deg, #012549 0%, #0b3b68 100%);
+        }
+
+        .login-box .card,
+        .btn-primary,
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active {
+            border-color: var(--vp-blue);
+        }
+
+        .btn-primary,
+        .bg-primary,
+        .text-bg-primary,
+        .card-primary > .card-header {
+            background-color: var(--vp-blue) !important;
+            color: #ffffff !important;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active {
+            background-color: var(--vp-green) !important;
+            border-color: var(--vp-green) !important;
+        }
+
+        a {
+            color: var(--vp-blue);
+        }
+
+        a:hover,
+        a:focus {
+            color: var(--vp-green);
+        }
+    </style>
+
 </head>
 
 

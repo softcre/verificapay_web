@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                    <img src="<?= arsha_asset('img/hero-img.png') ?>" class="img-fluid animated" alt="Hero illustration">
+                    <img src="<?= base_url('assets/img/landing/verificapay.png') ?>" class="img-fluid animated" alt="VerificaPay illustration">
                 </div>
             </div>
         </div>
