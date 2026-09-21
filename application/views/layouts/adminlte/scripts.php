@@ -1,0 +1,1 @@
+<script src="<?= adminlte_asset('js/adminlte.min.js') ?>"></script>
