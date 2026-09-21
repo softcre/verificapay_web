@@ -83,3 +83,74 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+
+/**
+ * APPLICATION
+ */
+defined('APP_NAME') OR define(
+    'APP_NAME',
+    'VerificaPay'
+);
+
+
+/**
+ * PATHS
+ */
+defined('ADMIN_PATH') OR define(
+    'ADMIN_PATH',
+    'admin'
+);
+
+defined('AUTH_PATH') OR define(
+    'AUTH_PATH',
+    'auth'
+);
+
+defined('PUBLIC_PATH') OR define(
+    'PUBLIC_PATH',
+    'public'
+);
+
+
+/**
+ * AUTH ROUTES
+ */
+defined('LOGIN_PATH') OR define(
+    'LOGIN_PATH',
+    'login'
+);
+
+defined('LOGIN_AUTH_PATH') OR define(
+    'LOGIN_AUTH_PATH',
+    'login/auth'
+);
+
+defined('LOGOUT_PATH') OR define(
+    'LOGOUT_PATH',
+    'logout'
+);
+
+
+/**
+ * ADMIN ROUTES
+ */
+defined('DASHBOARD_PATH') OR define(
+    'DASHBOARD_PATH',
+    ADMIN_PATH . '/dashboard'
+);
+
+
+/**
+ * MODELS
+ */
+defined('USUARIOS_MODEL') OR define(
+    'USUARIOS_MODEL',
+    'Usuarios_model'
+);
+
+defined('USUARIOS_TIPO_MODEL') OR define(
+    'USUARIOS_TIPO_MODEL',
+    'Usuarios_tipo_model'
+);

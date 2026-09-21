@@ -19,7 +19,7 @@
           href="<?= adminlte_asset('css/adminlte.min.css') ?>">
 
     <link rel="stylesheet"
-          href="<?= adminlte_asset('vendor/bootstrap-icons/bootstrap-icons.min.css') ?>">
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 </head>
 
