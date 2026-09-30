@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
             <!-- <img src="<?= arsha_asset('img/hero-img.png') ?>" class="img-fluid animated" alt=""> -->
-            <img src="<?= arsha_asset('/img/hero-img.png')?>" class="img-fluid animated" alt="">
+            <img src="<?= arsha_asset('img/VPhero.png') ?>" class="img-fluid animated" alt="VerificaPay">
           </div>
         </div>
       </div>
