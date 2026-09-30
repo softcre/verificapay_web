@@ -12,11 +12,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <div class="col-lg-6">
 
-                    <h4>Join Our Newsletter</h4>
+                    <h4>Novedades de VerificaPay</h4>
 
                     <p>
-                        Subscribe to our newsletter and receive the latest news
-                        about our products and services!
+                        Recibí novedades sobre VerificaPay y sus funciones.
                     </p>
 
                     <form action="#"
@@ -25,10 +24,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <div class="newsletter-form">
 
-                            <input type="email" name="email">
+                            <input type="email" name="email" placeholder="Tu correo electrónico">
 
                             <input type="submit"
-                                   value="Subscribe">
+                                   value="Suscribirme">
 
                         </div>
 
@@ -62,12 +61,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <p>Resistencia, Chaco</p>
 
                     <p class="mt-3">
-                        <strong>Phone:</strong>
+                        <strong>Teléfono:</strong>
                         <span>---</span>
                     </p>
 
                     <p>
-                        <strong>Email:</strong>
+                        <strong>Correo electrónico:</strong>
                         <span>---</span>
                     </p>
 
@@ -77,27 +76,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div class="col-lg-2 col-md-3 footer-links">
 
-                <h4>Useful Links</h4>
+                <h4>Enlaces útiles</h4>
 
                 <ul>
                     <li>
                         <i class="bi bi-chevron-right"></i>
-                        <a href="#hero">Home</a>
+                        <a href="#hero">Inicio</a>
                     </li>
 
                     <li>
                         <i class="bi bi-chevron-right"></i>
-                        <a href="#about">About</a>
+                        <a href="#about">Producto</a>
                     </li>
 
                     <li>
                         <i class="bi bi-chevron-right"></i>
-                        <a href="#services">Services</a>
+                        <a href="#services">Funciones</a>
                     </li>
 
                     <li>
                         <i class="bi bi-chevron-right"></i>
-                        <a href="#contact">Contact</a>
+                        <a href="#contact">Contacto</a>
                     </li>
                 </ul>
 
@@ -105,22 +104,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div class="col-lg-2 col-md-3 footer-links">
 
-                <h4>Our Services</h4>
+                <h4>VerificaPay</h4>
 
                 <ul>
                     <li>
                         <i class="bi bi-chevron-right"></i>
-                        <a href="#services">Service 1</a>
+                        <a href="#services">Consulta de movimientos</a>
                     </li>
 
                     <li>
                         <i class="bi bi-chevron-right"></i>
-                        <a href="#services">Service 2</a>
+                        <a href="#services">Verificación de transferencias</a>
                     </li>
 
                     <li>
                         <i class="bi bi-chevron-right"></i>
-                        <a href="#services">Service 3</a>
+                        <a href="#services">Acceso de solo lectura</a>
                     </li>
 
                 </ul>
@@ -129,10 +128,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div class="col-lg-4 col-md-12">
 
-                <h4>Follow Us</h4>
+                <h4>Redes sociales</h4>
 
                 <p>
-                    Follow VerificaPay on social media.
+                    Seguinos en redes sociales.
                 </p>
 
                 <div class="social-links d-flex">
@@ -166,11 +165,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <p>
             © <span>Copyright</span>
             <strong class="px-1 sitename">VerificaPay</strong>
-            <span>All Rights Reserved</span>
+            <span>Todos los derechos reservados</span>
         </p>
 
         <div class="credits">
-            Designed for VerificaPay
+            Diseñado para VerificaPay
         </div>
 
     </div>

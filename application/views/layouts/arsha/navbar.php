@@ -18,31 +18,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul>
 
                 <li>
-                    <a href="#hero" class="active">Home</a>
+                    <a href="#hero" class="active">Inicio</a>
                 </li>
 
                 <li>
-                    <a href="#about">About</a>
+                    <a href="#about">Producto</a>
                 </li>
 
                 <li>
-                    <a href="#services">Services</a>
+                    <a href="#services">Funciones</a>
                 </li>
 
                 <li>
-                    <a href="#portfolio">Portfolio</a>
+                    <a href="#beneficios">Beneficios</a>
                 </li>
 
                 <li>
-                    <a href="#team">Team</a>
+                    <a href="#seguridad">Seguridad</a>
                 </li>
 
                 <li>
-                    <a href="#pricing">Pricing</a>
+                    <a href="#como-funciona">Cómo funciona</a>
                 </li>
 
                 <li>
-                    <a href="#contact">Contact</a>
+                    <a href="#contact">Contacto</a>
                 </li>
 
             </ul>
@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </nav>
 
         <a class="btn-getstarted" href="#about">
-            Get Started
+            Conocer el producto
         </a>
 
     </div>
