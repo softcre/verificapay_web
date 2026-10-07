@@ -11,7 +11,7 @@
                     <h3 class="mb-0">
                         <?= isset($page_title)
                             ? html_escape($page_title)
-                            : 'Dashboard'
+                            : 'Resumen'
                         ?>
                     </h3>
 

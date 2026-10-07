@@ -39,7 +39,10 @@ class Index_controller extends CI_Controller
         // Si ya está autenticado, no tiene sentido mostrar
         // nuevamente el formulario de login.
         if ($this->session->userdata('login') === TRUE) {
-            redirect(DASHBOARD_PATH);
+            $destination = (int) $this->session->userdata('usuario_tipo_id') === 1
+                ? DASHBOARD_PATH
+                : base_url();
+            redirect($destination);
             return;
         }
 
@@ -118,7 +121,9 @@ class Index_controller extends CI_Controller
             'status'  => 'success',
             'title'   => 'Bienvenido',
             'message' => 'Bienvenido ' . $usuario->nombre . '!',
-            'url'     => site_url(DASHBOARD_PATH)
+            'url'     => (int) $usuario->usuario_tipo_id === 1
+                ? site_url(DASHBOARD_PATH)
+                : base_url()
         ]);
     }
 
@@ -138,7 +143,9 @@ class Index_controller extends CI_Controller
     private function viewLogin()
     {
         $data = [
-            'title' => 'Acceso - ' . APP_NAME
+            'title' => 'Acceso - ' . APP_NAME,
+            'csrf_name' => $this->security->get_csrf_token_name(),
+            'csrf_hash' => $this->security->get_csrf_hash()
         ];
 
         $this->load->view(

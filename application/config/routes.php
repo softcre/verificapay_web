@@ -59,6 +59,15 @@ $route[LOGOUT_PATH] = 'index_controller/logout';
 
 $route[ADMIN_PATH] = 'admin/dashboard_controller';
 $route[DASHBOARD_PATH] = 'admin/dashboard_controller';
+$route['admin/leads'] = 'admin/leads_controller/index';
+$route['admin/leads/(:num)'] = 'admin/leads_controller/detail/$1';
+$route['admin/leads/(:num)/update'] = 'admin/leads_controller/update/$1';
+$route['admin/email-queue'] = 'admin/email_queue_controller/index';
+$route['admin/email-queue/(:num)/retry'] = 'admin/email_queue_controller/retry/$1';
+$route['admin/users'] = 'admin/users_controller/index';
+$route['admin/users/create'] = 'admin/users_controller/create';
+$route['admin/users/(:num)/update'] = 'admin/users_controller/update/$1';
+$route['admin/audit'] = 'admin/audit_controller/index';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -6,6 +6,45 @@ class Email_outbox_model extends CI_Model
     private $table = 'email_outbox';
     private $max_attempts = 5;
 
+    public function get_admin_list($status = '', $limit = 20, $offset = 0)
+    {
+        if (in_array($status, ['pending', 'sending', 'sent', 'failed'], TRUE)) {
+            $this->db->where('status', $status);
+        }
+
+        return $this->db
+            ->select('e.*, c.full_name, c.business_name, c.email AS contact_email')
+            ->from($this->table . ' e')
+            ->join('contact_requests c', 'c.id_contact_request = e.contact_request_id', 'left')
+            ->order_by('e.id_email_outbox', 'DESC')
+            ->limit((int) $limit, (int) $offset)
+            ->get()
+            ->result();
+    }
+
+    public function count_admin_list($status = '')
+    {
+        if (in_array($status, ['pending', 'sending', 'sent', 'failed'], TRUE)) {
+            $this->db->where('status', $status);
+        }
+        return $this->db->count_all_results($this->table);
+    }
+
+    public function retry_failed($id)
+    {
+        $this->db->where('id_email_outbox', (int) $id);
+        $this->db->where('status', 'failed');
+        $this->db->update($this->table, [
+            'status' => 'pending',
+            'attempts' => 0,
+            'available_at' => date('Y-m-d H:i:s'),
+            'locked_at' => NULL,
+            'last_error' => NULL
+        ]);
+
+        return $this->db->affected_rows() === 1;
+    }
+
     public function claim_next()
     {
         $this->db->set('status', 'failed');

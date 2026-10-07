@@ -27,6 +27,44 @@ class Usuarios_model extends CI_Model
 		return $this->db->get()->result();
 	}
 
+    public function get_admin_list()
+    {
+        return $this->db
+            ->select('u.id_usuario, u.usuario_tipo_id, u.nombre, u.apellido, u.email, u.activo, u.created_at, ut.tipo_usuario')
+            ->from($this->table . ' u')
+            ->join($this->tableUsuariosTipo . ' ut', 'u.usuario_tipo_id = ut.id_tipo_usuario', 'left')
+            ->where('u.deleted_at', NULL)
+            ->order_by('u.id_usuario', 'ASC')
+            ->get()
+            ->result();
+    }
+
+    public function get_active_admin_count()
+    {
+        return $this->db
+            ->where('usuario_tipo_id', 1)
+            ->where('activo', 1)
+            ->where('deleted_at', NULL)
+            ->count_all_results($this->table);
+    }
+
+    public function create_admin_user(array $user)
+    {
+        return $this->db->insert($this->table, $user) ? $this->db->insert_id() : FALSE;
+    }
+
+    public function update_admin_user($id, $role_id, $active)
+    {
+        return $this->db
+            ->where('id_usuario', (int) $id)
+            ->where('deleted_at', NULL)
+            ->update($this->table, [
+                'usuario_tipo_id' => (int) $role_id,
+                'activo' => (int) $active,
+                'updated_at' => date('Y-m-d H:i:s')
+            ]);
+    }
+
   
 	//--------------------------------------------------------------
 	public function get($id_usuario)

@@ -1,15 +1,15 @@
 <footer class="app-footer">
 
     <div class="float-end d-none d-sm-inline">
-        Admin Panel
+        VerificaPay
     </div>
 
     <strong>
         &copy; <?= date('Y') ?>
-        My Company.
+        VerificaPay.
     </strong>
 
-    All rights reserved.
+    Todos los derechos reservados.
 
 </footer>
 

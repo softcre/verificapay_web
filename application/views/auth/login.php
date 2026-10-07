@@ -35,10 +35,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         :root {
             --vp-blue: #012549;
             --vp-green: #00b8a4;
+            --vp-green-dark: #008f82;
+            --vp-ink: #18324b;
+            --vp-muted: #617589;
+            --vp-border: #dce5ed;
             --bs-primary: var(--vp-blue);
             --bs-primary-rgb: 1, 37, 73;
             --bs-link-color: var(--vp-blue);
-            --bs-link-hover-color: var(--vp-green);
+            --bs-link-hover-color: var(--vp-green-dark);
             --bs-btn-primary-bg: var(--vp-blue);
             --bs-btn-primary-border-color: var(--vp-blue);
             --bs-btn-primary-hover-bg: #021d37;
@@ -46,30 +50,128 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
 
         body {
-            background: linear-gradient(180deg, #012549 0%, #0b3b68 100%);
+            min-height: 100vh;
+            color: var(--vp-ink);
+            background:
+                radial-gradient(ellipse at 12% 10%, rgba(0, 184, 164, 0.11), transparent 34rem),
+                linear-gradient(145deg, #eef4f8 0%, #f7fafc 55%, #e8f0f5 100%);
         }
 
-        .login-box .card,
-        .btn-primary,
-        .btn-primary:hover,
-        .btn-primary:focus,
-        .btn-primary:active {
-            border-color: var(--vp-blue);
+        .login-box {
+            width: min(100% - 2rem, 440px);
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
 
-        .btn-primary,
-        .bg-primary,
-        .text-bg-primary,
-        .card-primary > .card-header {
-            background-color: var(--vp-blue) !important;
-            color: #ffffff !important;
+        .login-box .card {
+            overflow: hidden;
+            border: 1px solid rgba(1, 37, 73, 0.09);
+            border-top: 4px solid var(--vp-green);
+            border-radius: 1rem;
+            background-color: #ffffff;
+            box-shadow: 0 1.25rem 3.5rem rgba(1, 37, 73, 0.13);
         }
 
-        .btn-primary:hover,
-        .btn-primary:focus,
-        .btn-primary:active {
-            background-color: var(--vp-green) !important;
-            border-color: var(--vp-green) !important;
+        .login-brand {
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 1px solid #edf2f6;
+            background: linear-gradient(180deg, #ffffff 0%, #fbfdfe 100%);
+        }
+
+        .login-brand img {
+            display: block;
+            width: min(100%, 250px);
+            height: auto;
+            margin: 0 auto 0.75rem;
+        }
+
+        .login-brand p {
+            margin: 0;
+            color: var(--vp-muted);
+            font-size: 0.92rem;
+        }
+
+        .login-box-msg {
+            padding: 0.25rem 0 1.25rem;
+            color: var(--vp-blue);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .login-box .card-body {
+            padding: 1.75rem 2rem 2rem;
+        }
+
+        .login-box .input-group {
+            margin-bottom: 1rem !important;
+        }
+
+        .login-box .form-control,
+        .login-box .input-group-text {
+            min-height: 3rem;
+            color: var(--vp-blue) !important;
+            border-color: #cbd8e3;
+            background-color: #ffffff;
+        }
+
+        .login-box .form-control {
+            font-weight: 500;
+            caret-color: var(--vp-green-dark);
+        }
+
+        .login-box .input-group:focus-within .form-control,
+        .login-box .input-group:focus-within .input-group-text {
+            border-color: var(--vp-green);
+            box-shadow: 0 0 0 0.15rem rgba(0, 184, 164, 0.15);
+        }
+
+        .login-box .input-group-text {
+            color: var(--vp-muted);
+            border-left: 0;
+        }
+
+        .login-box .form-control:focus {
+            color: var(--vp-blue) !important;
+            border-color: var(--vp-green);
+            box-shadow: none;
+        }
+
+        .login-box .form-control::placeholder {
+            color: #52677a;
+            opacity: 1;
+        }
+
+        .login-box .form-control:-webkit-autofill,
+        .login-box .form-control:-webkit-autofill:hover,
+        .login-box .form-control:-webkit-autofill:focus {
+            -webkit-text-fill-color: var(--vp-blue);
+            box-shadow: 0 0 0 1000px #ffffff inset;
+        }
+
+        .login-box .btn-primary {
+            min-height: 3rem;
+            border: 0;
+            border-radius: 0.55rem;
+            background-color: var(--vp-blue);
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .login-box .btn-primary:hover,
+        .login-box .btn-primary:focus,
+        .login-box .btn-primary:active {
+            background-color: var(--vp-green-dark);
+            color: #ffffff;
+        }
+
+        .login-box .btn-primary:hover {
+            transform: translateY(-1px);
+        }
+
+        .login-back-link {
+            color: var(--vp-muted);
+            font-size: 0.92rem;
         }
 
         a {
@@ -78,7 +180,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         a:hover,
         a:focus {
-            color: var(--vp-green);
+            color: var(--vp-green-dark);
+        }
+
+        @media (max-width: 480px) {
+            .login-box .card-body {
+                padding: 1.5rem;
+            }
+
+            .login-brand {
+                padding-top: 1.75rem;
+            }
         }
     </style>
 
@@ -90,20 +202,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div class="login-box">
 
-    <div class="card card-outline card-primary">
+    <div class="card">
 
 
         <!-- Logo -->
 
-        <div class="card-header text-center">
+        <div class="login-brand text-center">
 
             <a href="<?= site_url('/') ?>"
-               class="h1 text-decoration-none">
-
-                <b>Verifica</b>Pay
-
+               aria-label="VerificaPay, inicio">
+                <img src="<?= base_url('assets/arsha/img/hero-img-sinfondo.png') ?>"
+                     alt="VerificaPay"
+                     width="250"
+                     height="150">
             </a>
-
+            <p>Claridad y confianza para tu negocio.</p>
         </div>
 
 
@@ -121,6 +234,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   method="post"
                   autocomplete="off">
 
+                <input type="hidden"
+                       name="<?= html_escape($csrf_name) ?>"
+                       value="<?= html_escape($csrf_hash) ?>">
 
                 <!-- Email -->
 
@@ -208,7 +324,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <div class="text-center mt-4">
 
-                <a href="<?= site_url('/') ?>">
+                <a href="<?= site_url('/') ?>"
+                   class="login-back-link text-decoration-none">
                     Volver al sitio
                 </a>
 

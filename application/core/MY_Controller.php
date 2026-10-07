@@ -24,6 +24,31 @@ class MY_Controller extends CI_Controller
             redirect(base_url());
             exit;
         }
+
+        $this->require_admin();
+    }
+
+    protected function require_admin()
+    {
+        $user_id = (int) $this->session->userdata('id');
+        $account = $user_id > 0
+            ? $this->db
+                ->select('usuario_tipo_id, activo, deleted_at')
+                ->where('id_usuario', $user_id)
+                ->get('usuarios')
+                ->row()
+            : NULL;
+
+        if (
+            !$account ||
+            (int) $account->usuario_tipo_id !== 1 ||
+            (int) $account->activo !== 1 ||
+            $account->deleted_at !== NULL
+        ) {
+            $this->session->sess_destroy();
+            show_error('No tenés permisos para acceder a esta sección.', 403);
+            exit;
+        }
     }
 
     /**
@@ -34,6 +59,9 @@ class MY_Controller extends CI_Controller
      */
     protected function render_admin($view, $data = [])
     {
+        $data['current_uri'] = $this->uri->uri_string();
+        $data['current_user'] = $this->session->userdata('nombre');
+        $data['is_admin'] = (int) $this->session->userdata('usuario_tipo_id') === 1;
         $data['content_view'] = $view;
 
         $this->load->view(

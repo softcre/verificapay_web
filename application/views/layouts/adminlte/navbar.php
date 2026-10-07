@@ -20,6 +20,9 @@
         </ul>
 
         <ul class="navbar-nav ms-auto">
+            <li class="nav-item d-flex align-items-center px-2 text-body-secondary">
+                <?= html_escape(isset($current_user) ? $current_user : '') ?>
+            </li>
 
             <li class="nav-item">
 
@@ -27,7 +30,7 @@
                    class="nav-link">
 
                     <i class="bi bi-globe"></i>
-                    Website
+                    Sitio web
 
                 </a>
 
@@ -39,7 +42,7 @@
                    class="nav-link">
 
                     <i class="bi bi-box-arrow-right"></i>
-                    Logout
+                    Cerrar sesión
 
                 </a>
 
