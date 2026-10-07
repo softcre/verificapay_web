@@ -2,15 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<header id="header" class="header d-flex align-items-center fixed-top">
+<header id="header" class="header vp-site-header d-flex align-items-center fixed-top">
 
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
         <a href="<?= site_url('/') ?>"
-           class="logo d-flex align-items-center me-auto">
-
-            <h1 class="sitename">VerificaPay</h1>
-
+           class="vp-brand me-auto"
+           aria-label="VerificaPay, inicio">
+            <img src="<?= arsha_asset('img/hero-img-sinfondo.png') ?>" alt="VerificaPay">
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -18,31 +17,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul>
 
                 <li>
-                    <a href="#hero" class="active">Inicio</a>
+                    <a href="<?= isset($is_contact_page) && $is_contact_page ? site_url('/#solucion') : '#solucion' ?>">La solución</a>
                 </li>
-
                 <li>
-                    <a href="#about">Producto</a>
+                    <a href="<?= isset($is_contact_page) && $is_contact_page ? site_url('/#como-funciona') : '#como-funciona' ?>">Cómo funciona</a>
                 </li>
-
                 <li>
-                    <a href="#services">Funciones</a>
-                </li>
-
-                <li>
-                    <a href="#beneficios">Beneficios</a>
-                </li>
-
-                <li>
-                    <a href="#seguridad">Seguridad</a>
-                </li>
-
-                <li>
-                    <a href="#como-funciona">Cómo funciona</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contacto</a>
+                    <a href="<?= isset($is_contact_page) && $is_contact_page ? site_url('/#nosotros') : '#nosotros' ?>">Nosotros</a>
                 </li>
 
             </ul>
@@ -51,8 +32,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         </nav>
 
-        <a class="btn-getstarted" href="#about">
-            Conocer el producto
+        <a class="btn-getstarted" href="<?= site_url('contacto') ?>">
+            Contactanos <i class="bi bi-arrow-up-right"></i>
         </a>
 
     </div>

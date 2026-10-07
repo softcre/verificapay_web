@@ -1,0 +1,11 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+$config['smtp_host'] = '';
+$config['smtp_user'] = '';
+$config['smtp_pass'] = '';
+$config['smtp_port'] = 587;
+$config['smtp_crypto'] = 'tls';
+$config['mail_from'] = '';
+$config['mail_from_name'] = 'VerificaPay';
+$config['contact_email_to'] = 'soportesoftcre@gmail.com';

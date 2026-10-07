@@ -50,6 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'home_controller';
+$route['contacto'] = 'contact_controller/index';
+$route['contacto/enviar'] = 'contact_controller/submit';
 
 $route[LOGIN_PATH] = 'index_controller';
 $route[LOGIN_AUTH_PATH] = 'index_controller/login';

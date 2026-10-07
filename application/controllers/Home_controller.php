@@ -6,7 +6,9 @@ class Home_controller extends CI_Controller
     public function index()
     {
         $data = [
-            'title'      => 'VerificaPay',
+            'title' => 'VerificaPay — La certeza de un pago, en tiempo real',
+            'meta_description' => 'VerificaPay ayuda a los negocios a consultar movimientos y comprobar transferencias con acceso de solo lectura.',
+            'meta_keywords' => 'VerificaPay, verificación de pagos, transferencias, solo lectura',
             'page_title' => 'Inicio'
         ];
 

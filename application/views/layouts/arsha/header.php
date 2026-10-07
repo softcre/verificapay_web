@@ -64,6 +64,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <link href="<?= arsha_asset('css/main.css') ?>"
           rel="stylesheet">
+
+    <link href="<?= arsha_asset('css/landing.css') ?>"
+          rel="stylesheet">
   <!-- =======================================================
   * Template Name: Arsha
   * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/

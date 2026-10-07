@@ -1,232 +1,136 @@
-<main id="main">
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 
-    <section id="hero" class="hero section">
-        <div class="container">
-            <div class="row gy-4 align-items-center">
-                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h1>Confirmá tus transferencias, sin acceso para operar</h1>
-                    <h2>VerificaPay permite consultar los últimos movimientos de una cuenta y comprobar si una transferencia se acreditó. Solo lectura: sin transferencias ni acceso para mover dinero.</h2>
-                    <div class="d-flex">
-                        <a href="#como-funciona" class="btn-get-started">Cómo funciona</a>
-                        <a href="#beneficios" class="btn-watch-video d-flex align-items-center"><i class="bi bi-shield-check"></i><span>Ver beneficios</span></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                    <img src="<?= arsha_asset('img/VPhero.png') ?>" class="img-fluid animated" alt="VerificaPay">
-                </div>
+<main class="vp-main">
+    <section id="hero" class="vp-hero">
+        <div class="vp-hero-grid" aria-hidden="true"></div>
+        <div class="vp-hero-copy">
+            <span class="vp-eyebrow"><span class="vp-status-dot"></span> CLARIDAD EN CADA TRANSACCIÓN</span>
+            <h1>La certeza de un pago.<br><em>En tiempo real.</em></h1>
+            <p>Pagá. Verificá. Entregá. VerificaPay está diseñado para<br class="vp-desktop-break">
+                simplificar la verificación de pagos de tu negocio.</p>
+            <div class="vp-hero-actions">
+                <a href="<?= site_url('contacto') ?>" class="vp-button vp-button-mint">Conocé VerificaPay <i class="bi bi-arrow-up-right"></i></a>
+                <a href="#como-funciona" class="vp-text-link">Descubrí cómo funciona <i class="bi bi-arrow-down"></i></a>
             </div>
         </div>
-    </section>
 
-    <section id="about" class="about section">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Verificación de pagos con acceso de solo lectura</h2>
-                <p>VerificaPay ayuda a los equipos a confirmar si una transferencia se acreditó, sin darles permisos para transferir dinero ni operar sobre la cuenta.</p>
-            </div>
-            <div class="row gy-4">
-                <div class="col-lg-6">
-                    <p>
-                        El personal autorizado puede consultar los últimos movimientos de una cuenta y verificar el impacto de una transferencia de forma clara y directa.
-                    </p>
-                    <p>
-                        Así, la verificación de pagos se separa del manejo de fondos: consultar los movimientos no habilita a realizar transferencias.
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="content ps-0 ps-lg-3">
-                        <ul>
-                            <li><i class="bi bi-check-circle-fill"></i> Consulta de los últimos movimientos de la cuenta.</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Verificación de si una transferencia impactó en la cuenta.</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Acceso de consulta sin permisos para transferir ni mover dinero.</li>
-                        </ul>
+        <div class="vp-product-stage" aria-label="Vista ilustrativa del panel de pagos VerificaPay">
+            <div class="vp-dashboard">
+                <div class="vp-dashboard-bar">
+                    <div class="vp-mini-brand">
+                        <span class="vp-mark" aria-hidden="true"><i></i><i></i></span>
+                        Verifica<span>Pay</span><span class="vp-crumb">/ Resumen</span>
                     </div>
+                    <div class="vp-preview-label"><span class="vp-status-dot"></span> Vista ilustrativa</div>
+                    <i class="bi bi-three-dots" aria-hidden="true"></i>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services section">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Funciones</h2>
-                <p>La información necesaria para verificar pagos, sin habilitar operaciones sobre la cuenta.</p>
-            </div>
-            <div class="row gy-4">
-                <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="service-item position-relative">
-                        <div class="icon"><i class="bi bi-shield-check"></i></div>
-                        <h4><a href="#" class="stretched-link">Consulta de movimientos</a></h4>
-                        <p>Revisá los movimientos recientes de la cuenta desde una vista destinada a consulta.</p>
+                <div class="vp-dashboard-content">
+                    <div class="vp-dashboard-heading">
+                        <div><span class="vp-small-label">TU NEGOCIO, BAJO CONTROL</span><h2>Resumen de pagos</h2></div>
+                        <span class="vp-period">Hoy <i class="bi bi-chevron-down"></i></span>
                     </div>
-                </div>
-                <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="service-item position-relative">
-                        <div class="icon"><i class="bi bi-cash-stack"></i></div>
-                        <h4><a href="#" class="stretched-link">Verificación de transferencias</a></h4>
-                        <p>Comprobá si una transferencia ya se refleja entre los últimos movimientos.</p>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="service-item position-relative">
-                        <div class="icon"><i class="bi bi-graph-up-arrow"></i></div>
-                        <h4><a href="#" class="stretched-link">Acceso de solo lectura</a></h4>
-                        <p>El usuario puede consultar la información, pero no iniciar transferencias ni mover fondos.</p>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="service-item position-relative">
-                        <div class="icon"><i class="bi bi-people"></i></div>
-                        <h4><a href="#" class="stretched-link">Verificación para equipos</a></h4>
-                        <p>El personal puede confirmar acreditaciones sin necesitar permisos para operar sobre la cuenta.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="beneficios" class="portfolio section">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Beneficios para tu equipo</h2>
-                <p>Agilizá la validación de pagos y limitá el acceso a las funciones que cada tarea necesita.</p>
-            </div>
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <div class="portfolio-box p-4 border rounded-4 bg-light h-100">
-                            <h4>Confirmaciones más ágiles</h4>
-                            <p>Consultá los movimientos recientes para verificar si una transferencia se acreditó.</p>
+                    <div class="vp-dashboard-metrics">
+                        <div>
+                            <span>Pagos recibidos</span>
+                            <strong>$ 24.850<small>,00</small></strong>
+                            <p><i class="bi bi-arrow-down-left"></i> 12 transacciones de ejemplo</p>
+                        </div>
+                        <div>
+                            <span>Pagos verificados</span>
+                            <strong>10 <small class="vp-metric-badge"><i class="bi bi-check2"></i> Verificados</small></strong>
+                            <p>Información clara, en un solo lugar</p>
+                        </div>
+                        <div class="vp-last-payment">
+                            <span class="vp-check-icon"><i class="bi bi-check2-circle"></i></span>
+                            <div><span>Último pago verificado</span><strong>$ 2.500,00</strong><p>Referencia VP-00128</p></div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <div class="portfolio-box p-4 border rounded-4 bg-light h-100">
-                            <h4>Menos exposición</h4>
-                            <p>El equipo puede revisar movimientos sin recibir permisos para transferir dinero.</p>
-                        </div>
+                    <div class="vp-transaction">
+                        <span class="vp-payment-avatar">MC</span>
+                        <div><strong>María C.</strong><span>Transferencia · VP-00128</span></div>
+                        <span class="vp-transaction-time">Hace unos instantes</span>
+                        <strong class="vp-transaction-amount">$ 2.500,00</strong>
+                        <span class="vp-verified"><span class="vp-status-dot"></span> Verificado</span>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="portfolio-item">
-                        <div class="portfolio-box p-4 border rounded-4 bg-light h-100">
-                            <h4>Funciones separadas</h4>
-                            <p>La consulta de pagos queda diferenciada de la operación y el manejo de fondos.</p>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="vp-floating-proof">
+                <span><i class="bi bi-shield-check"></i></span>
+                <div>De la duda a la certeza.<small>Información que te permite avanzar.</small></div>
+            </div>
+        </div>
+
+        <div class="vp-hero-trust">
+            <span><i class="bi bi-broadcast"></i> Visibilidad de movimientos</span>
+            <span><i class="bi bi-lock"></i> Acceso de solo lectura</span>
+            <span><i class="bi bi-shield-check"></i> Confianza en cada paso</span>
+        </div>
+    </section>
+
+    <section id="solucion" class="vp-solution vp-rail">
+        <div class="vp-section-intro">
+            <span class="vp-eyebrow vp-dark-eyebrow">01 / LA SOLUCIÓN</span>
+            <h2>Tu tiempo es para crecer.<br><span>No para perseguir pagos.</span></h2>
+            <p>Una forma más simple de saber qué pasó con cada pago, sin perder de vista lo importante.</p>
+        </div>
+        <div class="vp-benefits">
+            <article>
+                <i class="bi bi-upc-scan"></i>
+                <h3>Verificá sin complicaciones</h3>
+                <p>Consultá los movimientos recientes para comprobar si una transferencia se acreditó.</p>
+                <span>Menos tareas repetitivas <i class="bi bi-arrow-up-right"></i></span>
+            </article>
+            <article>
+                <i class="bi bi-activity"></i>
+                <h3>Enterate con claridad</h3>
+                <p>Revisá el estado de los pagos recibidos y reducí el riesgo de aceptar pagos no acreditados.</p>
+                <span>Más visibilidad para tu equipo <i class="bi bi-arrow-up-right"></i></span>
+            </article>
+            <article>
+                <i class="bi bi-layers"></i>
+                <h3>Todo bajo una misma mirada</h3>
+                <p>Un punto de referencia para mantener el seguimiento de tu operación en cuestión de segundos.</p>
+                <span>Más control para tu negocio <i class="bi bi-arrow-up-right"></i></span>
+            </article>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="vp-process">
+        <div class="vp-rail vp-process-layout">
+            <div>
+                <span class="vp-eyebrow vp-dark-eyebrow">02 / ASÍ DE SIMPLE</span>
+                <h2>Un pago.<br>Un estado claro.<br><em>Un paso adelante.</em></h2>
+                <p>Del movimiento a la información que necesitás.<br>Sin vueltas innecesarias.</p>
+                <a href="<?= site_url('contacto') ?>" class="vp-text-link vp-dark-link">Quiero conocer VerificaPay <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+            <div class="vp-steps">
+                <article><span>01</span><div><h3>Recibís un pago</h3><p>Tu cliente realiza una transferencia.</p></div></article>
+                <article><span>02</span><div><h3>Consultás el movimiento</h3><p>Revisás si la transferencia aparece entre los últimos movimientos de la cuenta.</p></div></article>
+                <article><span>03</span><div><h3>Continuás con confianza</h3><p>Con el estado del pago claro, podés seguir con lo que realmente importa.</p></div></article>
+                <p class="vp-development-note">Producto en desarrollo. Las funcionalidades e integraciones se comunicarán antes del lanzamiento.</p>
             </div>
         </div>
     </section>
 
-    <section id="seguridad" class="team section">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Un alcance de acceso claro</h2>
-                <p>VerificaPay está pensado para que el personal compruebe pagos sin acceso a operar sobre la cuenta.</p>
+    <section id="contacto" class="vp-contact vp-rail">
+        <div class="vp-contact-panel">
+            <div class="vp-contact-copy">
+                <span class="vp-eyebrow">03 / EMPEZÁ CON VERIFICAPAY</span>
+                <h2>Llevá la verificación<br>de pagos a<br><em>tu negocio.</em></h2>
+                <p>Conocé cómo VerificaPay puede ayudar a tu equipo a consultar pagos con un acceso pensado para solo lectura.</p>
+                <span class="vp-contact-promise"><i class="bi bi-shield-check"></i> Sin permisos para transferir ni mover dinero.</span>
             </div>
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="member text-center p-4 border rounded-4 bg-light h-100">
-                        <h4>Solo consulta</h4>
-                        <span>Visualización de los últimos movimientos</span>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="member text-center p-4 border rounded-4 bg-light h-100">
-                        <h4>Sin transferencias</h4>
-                        <span>El usuario no puede iniciar transferencias</span>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="member text-center p-4 border rounded-4 bg-light h-100">
-                        <h4>Sin manejo de fondos</h4>
-                        <span>La consulta no habilita movimientos de dinero</span>
-                    </div>
-                </div>
+            <div class="vp-contact-card">
+                <span class="vp-contact-icon"><i class="bi bi-envelope-paper"></i></span>
+                <h3>Hablemos de tu negocio.</h3>
+                <p>Dejanos tus datos y nuestro equipo se pondrá en contacto para contarte más sobre VerificaPay.</p>
+                <a class="vp-button vp-button-forest" href="<?= site_url('contacto') ?>">
+                    Completar formulario <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <small>Nombre · negocio · email · teléfono</small>
             </div>
         </div>
     </section>
-
-    <section id="como-funciona" class="pricing section">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Cómo funciona</h2>
-                <p>Una forma sencilla de comprobar una transferencia sin conceder permisos para operar.</p>
-            </div>
-            <div class="row gy-4">
-                <div class="col-lg-4">
-                    <div class="pricing-item border rounded-4 p-4 h-100">
-                        <h3>Consultá</h3>
-                        <h4>Movimientos recientes</h4>
-                        <ul>
-                            <li>Ingresá a la vista de consulta</li>
-                            <li>Revisá los últimos movimientos de la cuenta</li>
-                            <li>Ubicá la transferencia que necesitás verificar</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="pricing-item featured border rounded-4 p-4 h-100">
-                        <h3>Verificá</h3>
-                        <h4>Impacto de la transferencia</h4>
-                        <ul>
-                            <li>Comprobá si aparece entre los movimientos</li>
-                            <li>Confirmá si impactó en la cuenta</li>
-                            <li>Realizá la verificación sin operar</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="pricing-item border rounded-4 p-4 h-100">
-                        <h3>Permisos separados</h3>
-                        <h4>Consulta, no transferencia</h4>
-                        <ul>
-                            <li>El acceso permite consultar movimientos</li>
-                            <li>No permite iniciar transferencias</li>
-                            <li>No habilita el manejo de fondos</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact section">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Contacto</h2>
-                <p>¿Querés conocer más sobre VerificaPay? Escribinos.</p>
-            </div>
-            <div class="row gy-4">
-                <div class="col-lg-5">
-                    <div class="info-wrap border rounded-4 p-4">
-                        <div><strong>Correo electrónico:</strong> hello@verificapay.com</div>
-                        <div><strong>Teléfono:</strong> ---</div>
-                        <div><strong>Ubicación:</strong> Resistencia, Chaco</div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <form class="php-email-form border rounded-4 p-4">
-                        <div class="row gy-3">
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Tu nombre" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" name="email" class="form-control" placeholder="Tu correo electrónico" required>
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Tu mensaje" required></textarea>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button type="submit">Enviar mensaje</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
 </main>

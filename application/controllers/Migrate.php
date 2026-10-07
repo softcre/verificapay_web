@@ -13,6 +13,11 @@ class Migrate extends CI_Controller{
 	
 	public function index()
 	{
+		if (!is_cli())
+		{
+			show_404();
+			return;
+		}
 			
 		if ($this->migration->current() === FALSE)
 		{
