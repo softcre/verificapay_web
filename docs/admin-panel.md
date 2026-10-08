@@ -31,3 +31,9 @@ CSRF-protected POST; it does not run migrations on a plain page visit.
 Administrative forms use CodeIgniter CSRF protection. Run the migration before
 deploying the updated application so contact status fields and the audit log
 table are available.
+
+For hosting deployments, set `VERIFICAPAY_BASE_URL` to the public site root
+(for example, `https://verificapay.com/`) if the host does not use
+`verificapay.com` or `www.verificapay.com`. The `.htaccess` rewrite rules
+support installing the application either at the domain root or under a
+subdirectory.

@@ -6,24 +6,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Base Site URL
 |--------------------------------------------------------------------------
 |
-| URL to your CodeIgniter root. Typically this will be your base URL,
-| WITH a trailing slash:
+| VERIFICAPAY_BASE_URL can explicitly set the public application URL. If it
+| is not set, verificapay.com is detected for hosting and localhost is used
+| for the XAMPP project path.
 |
-|	http://example.com/
-|
-| WARNING: You MUST set this value!
-|
-| If it is not set, then CodeIgniter will try to guess the protocol and
-| path to your installation, but due to security concerns the hostname will
-| be set to $_SERVER['SERVER_ADDR'] if available, or localhost otherwise.
-| The auto-detection mechanism exists only for convenience during
-| development and MUST NOT be used in production!
-|
-| If you need to allow multiple domains, remember that this file is still
-| a PHP script and you can easily do that on your own.
+| Examples:
+|   https://verificapay.com/
+|   http://localhost/verificapay_web/
 |
 */
-$config['base_url'] = 'http://localhost/verificapay_web/';
+$configured_base_url = getenv('VERIFICAPAY_BASE_URL');
+if ($configured_base_url !== FALSE && trim($configured_base_url) !== '') {
+    $config['base_url'] = rtrim(trim($configured_base_url), '/') . '/';
+} else {
+    $request_host = isset($_SERVER['HTTP_HOST'])
+        ? strtolower(preg_replace('/:\d+$/', '', trim($_SERVER['HTTP_HOST'])))
+        : '';
+
+    if (in_array($request_host, ['verificapay.com', 'www.verificapay.com'], TRUE)) {
+        $request_scheme = (
+            !empty($_SERVER['HTTPS']) &&
+            strtolower((string) $_SERVER['HTTPS']) !== 'off'
+        ) ? 'https' : 'http';
+        $config['base_url'] = $request_scheme . '://' . $request_host . '/';
+    } else {
+        $config['base_url'] = 'http://localhost/verificapay_web/';
+    }
+}
 
 /*
 |--------------------------------------------------------------------------
