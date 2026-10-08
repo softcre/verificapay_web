@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!-- Favicons -->
 
-    <link href="<?= arsha_asset('img/favicon.png') ?>" rel="icon">
+    <link href="<?= arsha_asset('img/favicon-vp.png?v=1') ?>" rel="icon" type="image/png">
 
     <link href="<?= arsha_asset('img/apple-touch-icon.png') ?>"
           rel="apple-touch-icon">

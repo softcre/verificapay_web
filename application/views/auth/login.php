@@ -19,6 +19,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         | VerificaPay
     </title>
 
+    <link rel="icon"
+          type="image/png"
+          href="<?= base_url('assets/arsha/img/favicon-vp.png?v=1') ?>">
 
     <!-- AdminLTE -->
 

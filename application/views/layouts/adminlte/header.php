@@ -13,7 +13,8 @@
     </title>
 
     <link rel="icon"
-          href="<?= adminlte_asset('img/favicon.png') ?>">
+          type="image/png"
+          href="<?= arsha_asset('img/favicon-vp.png?v=1') ?>">
 
     <link rel="stylesheet"
           href="<?= adminlte_asset('css/adminlte.min.css') ?>">
