@@ -10,7 +10,8 @@ $form_errors = isset($form_errors) && is_array($form_errors) ? $form_errors : []
         <div class="vp-contact-panel">
             <div class="vp-contact-copy">
                 <span class="vp-eyebrow">CONTACTO / HABLEMOS</span>
-                <h1>Conversemos sobre<br>tu negocio y<br><em>VerificaPay.</em></h1>
+               <!--  <h1>Conversemos sobre<br>tu negocio y<br><em>VerificaPay.</em></h1> -->
+                 <h1>Solicitá<br>VerificaPay<br><em>para tu negocio.</em></h1>
                 <p>Completá tus datos y nuestro equipo se pondrá en contacto para contarte más sobre el servicio.</p>
                 <span class="vp-contact-promise"><i class="bi bi-shield-check"></i> Tus datos se usarán para responder tu consulta.</span>
                 <a href="<?= site_url('/') ?>" class="vp-contact-back"><i class="bi bi-arrow-left"></i> Volver al inicio</a>
