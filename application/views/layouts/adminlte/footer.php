@@ -6,7 +6,7 @@
 
     <strong>
         &copy; <?= date('Y') ?>
-        VerificaPay.
+        VerificaPay by sofcre.
     </strong>
 
     Todos los derechos reservados.
