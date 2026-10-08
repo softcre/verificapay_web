@@ -89,6 +89,13 @@ abstract class CI_DB_driver {
 	public $database;
 
 	/**
+	 * Failover connection configurations
+	 *
+	 * @var	array
+	 */
+	public $failover = array();
+
+	/**
 	 * Database driver
 	 *
 	 * @var	string

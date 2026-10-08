@@ -84,6 +84,13 @@ class CI_URI {
 	public $rsegments = array();
 
 	/**
+	 * Config class instance
+	 *
+	 * @var	CI_Config
+	 */
+	public $config;
+
+	/**
 	 * Permitted URI chars
 	 *
 	 * PCRE character group allowed in URI segments
