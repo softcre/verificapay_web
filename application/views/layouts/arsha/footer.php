@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </a>
     </div>
     <div class="vp-footer-bottom vp-rail">
-        <span>© <?= date('Y') ?> VerificaPay. Todos los derechos reservados.</span>
+        <span>© <?= date('Y') ?> VerificaPay by Softcre. Todos los derechos reservados.</span>
         <span>Claridad que mueve tu negocio.</span>
         <a href="<?= site_url('contacto') ?>">Contactanos <i class="bi bi-arrow-up-right"></i></a>
     </div>
