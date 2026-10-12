@@ -111,16 +111,44 @@ class Email_sender extends CI_Controller
                 );
             }
 
+            $failure_details = $this->email_failure_details();
+            $failure_message =
+                'Email delivery failed (outbox ID ' . (int) $message['id_email_outbox'] .
+                ', attempt ' . (int) $message['attempts'] . '). ' . $failure_details;
             log_message(
                 'error',
-                'SMTP delivery failed for VerificaPay outbox ID ' .
-                (int) $message['id_email_outbox'] .
-                ' on attempt ' . (int) $message['attempts'] . '.'
+                $failure_message
             );
+            fwrite(STDERR, $failure_message . PHP_EOL);
             $failed++;
         }
 
         echo 'Email queue processed. Sent: ' . $sent . '; failed: ' . $failed . '.' . PHP_EOL;
+    }
+
+    private function email_failure_details()
+    {
+        $details = $this->email->print_debugger([]);
+
+        if (stripos($details, 'Unable to send data:') !== FALSE) {
+            return 'The SMTP connection was interrupted while transferring the message; message content omitted.';
+        }
+
+        $details = preg_replace('/<pre>.*?<\/pre>/is', ' ', $details);
+        $details = preg_replace('/<br\s*\/?>/i', ' ', $details);
+        $details = html_entity_decode(strip_tags($details), ENT_QUOTES, 'UTF-8');
+        $details = preg_replace(
+            '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i',
+            '[email address]',
+            $details
+        );
+        $details = trim(preg_replace('/\s+/', ' ', $details));
+
+        if ($details === '') {
+            return 'No SMTP error details were reported. Check the SMTP host, port, encryption, credentials, and sender authorization.';
+        }
+
+        return 'SMTP response: ' . substr($details, 0, 500);
     }
 
     private function email_library_config()

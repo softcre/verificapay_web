@@ -108,6 +108,17 @@ Expected output when messages were processed looks like:
 Email queue processed. Sent: 1; failed: 0.
 ```
 
+For a failed message, the command also prints an SMTP diagnostic, for example:
+
+```text
+Email delivery failed (outbox ID 12, attempt 1). SMTP response: Failed to authenticate password. Error: 535 Authentication failed
+Email queue processed. Sent: 0; failed: 1.
+```
+
+The diagnostic is also written to the CodeIgniter error log. It omits message
+content and masks email addresses; never share SMTP passwords or add them to
+command arguments or logs.
+
 If there is nothing ready to send, both counts can be zero. An incomplete SMTP
 configuration or database connection problem should be fixed before scheduling
 the task. Check the hosting PHP/CodeIgniter error log for details; do not paste
