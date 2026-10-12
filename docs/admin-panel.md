@@ -37,8 +37,8 @@ The hosting application is installed at the domain root. Set
 form submissions use the root domain, not a `/verificapay_web/` subdirectory.
 Locally, the XAMPP fallback remains `http://localhost/verificapay_web/`.
 Without this environment variable, the app detects `verificapay.com` and
-`www.verificapay.com` and generates root URLs; it also recognizes HTTPS when
-the hosting server terminates TLS at a reverse proxy.
+`www.verificapay.com` and generates HTTPS root URLs. This avoids generating
+HTTP asset links when hosting terminates TLS at a reverse proxy.
 
 Configure the hosting database credentials as environment variables:
 `VERIFICAPAY_DB_HOST`, `VERIFICAPAY_DB_USER`, `VERIFICAPAY_DB_PASSWORD`, and
