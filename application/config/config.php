@@ -24,10 +24,14 @@ if ($configured_base_url !== FALSE && trim($configured_base_url) !== '') {
         : '';
 
     if (in_array($request_host, ['verificapay.com', 'www.verificapay.com'], TRUE)) {
-        $request_scheme = (
-            !empty($_SERVER['HTTPS']) &&
-            strtolower((string) $_SERVER['HTTPS']) !== 'off'
-        ) ? 'https' : 'http';
+        $forwarded_proto = isset($_SERVER['HTTP_X_FORWARDED_PROTO'])
+            ? strtolower(trim(explode(',', $_SERVER['HTTP_X_FORWARDED_PROTO'])[0]))
+            : '';
+        $is_https = (
+            (!empty($_SERVER['HTTPS']) && strtolower((string) $_SERVER['HTTPS']) !== 'off') ||
+            $forwarded_proto === 'https'
+        );
+        $request_scheme = $is_https ? 'https' : 'http';
         $config['base_url'] = $request_scheme . '://' . $request_host . '/';
     } else {
         $config['base_url'] = 'http://localhost/verificapay_web/';

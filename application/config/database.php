@@ -73,12 +73,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+$database_host = getenv('VERIFICAPAY_DB_HOST');
+$database_user = getenv('VERIFICAPAY_DB_USER');
+$database_password = getenv('VERIFICAPAY_DB_PASSWORD');
+$database_name = getenv('VERIFICAPAY_DB_NAME');
+
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'verificapay_web_bd',
+	'hostname' => $database_host !== FALSE ? $database_host : 'localhost',
+	'username' => $database_user !== FALSE ? $database_user : 'root',
+	'password' => $database_password !== FALSE ? $database_password : '',
+	'database' => $database_name !== FALSE ? $database_name : 'verificapay_web_bd',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -32,8 +32,16 @@ Administrative forms use CodeIgniter CSRF protection. Run the migration before
 deploying the updated application so contact status fields and the audit log
 table are available.
 
-For hosting deployments, set `VERIFICAPAY_BASE_URL` to the public site root
-(for example, `https://verificapay.com/`) if the host does not use
-`verificapay.com` or `www.verificapay.com`. The `.htaccess` rewrite rules
-support installing the application either at the domain root or under a
-subdirectory.
+The hosting application is installed at the domain root. Set
+`VERIFICAPAY_BASE_URL` to `https://verificapay.com/` so generated links and
+form submissions use the root domain, not a `/verificapay_web/` subdirectory.
+Locally, the XAMPP fallback remains `http://localhost/verificapay_web/`.
+Without this environment variable, the app detects `verificapay.com` and
+`www.verificapay.com` and generates root URLs; it also recognizes HTTPS when
+the hosting server terminates TLS at a reverse proxy.
+
+Configure the hosting database credentials as environment variables:
+`VERIFICAPAY_DB_HOST`, `VERIFICAPAY_DB_USER`, `VERIFICAPAY_DB_PASSWORD`, and
+`VERIFICAPAY_DB_NAME`. Without these values, the application uses the local
+XAMPP defaults. After configuring the database, run `php index.php migrate`
+from the deployed project root before testing login.
