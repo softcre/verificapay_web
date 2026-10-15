@@ -21,6 +21,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="keywords"
           content="<?= isset($meta_keywords) ? html_escape($meta_keywords) : '' ?>">
 
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="VerificaPay">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:title"
+          content="<?= isset($title) ? html_escape($title) : 'VerificaPay' ?>">
+    <meta property="og:description"
+          content="<?= isset($meta_description) ? html_escape($meta_description) : '' ?>">
+    <meta property="og:url" content="<?= html_escape(current_url()) ?>">
+    <meta property="og:image"
+          content="<?= html_escape(asset_url('img/landing/verificapay.jpg')) ?>">
+    <meta property="og:image:alt" content="Logo de VerificaPay">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+          content="<?= isset($title) ? html_escape($title) : 'VerificaPay' ?>">
+    <meta name="twitter:description"
+          content="<?= isset($meta_description) ? html_escape($meta_description) : '' ?>">
+    <meta name="twitter:image"
+          content="<?= html_escape(asset_url('img/landing/verificapay.jpg')) ?>">
+
 
     <!-- Favicons -->
 
