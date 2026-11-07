@@ -16,49 +16,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
 
-        <div class="vp-product-stage" aria-label="Vista ilustrativa del panel de pagos VerificaPay">
-            <div class="vp-dashboard">
-                <div class="vp-dashboard-bar">
-                    <div class="vp-mini-brand">
-                        <span class="vp-mark" aria-hidden="true"><i></i><i></i></span>
-                        Verifica<span>Pay</span><span class="vp-crumb">/ Resumen</span>
-                    </div>
-                    <div class="vp-preview-label"><span class="vp-status-dot"></span> Vista ilustrativa</div>
-                    <i class="bi bi-three-dots" aria-hidden="true"></i>
-                </div>
-                <div class="vp-dashboard-content">
-                    <div class="vp-dashboard-heading">
-                        <div><span class="vp-small-label">TU NEGOCIO, BAJO CONTROL</span><h2>Resumen de pagos</h2></div>
-                        <span class="vp-period">Hoy <i class="bi bi-chevron-down"></i></span>
-                    </div>
-                    <div class="vp-dashboard-metrics">
-                        <div>
-                            <span>Pagos recibidos</span>
-                            <strong>$ 24.850<small>,00</small></strong>
-                            <p><i class="bi bi-arrow-down-left"></i> 12 transacciones de ejemplo</p>
-                        </div>
-                        <div>
-                            <span>Pagos verificados</span>
-                            <strong>10 <small class="vp-metric-badge"><i class="bi bi-check2"></i> Verificados</small></strong>
-                            <p>Información clara, en un solo lugar</p>
-                        </div>
-                        <div class="vp-last-payment">
-                            <span class="vp-check-icon"><i class="bi bi-check2-circle"></i></span>
-                            <div><span>Último pago verificado</span><strong>$ 2.500,00</strong><p>Referencia VP-00128</p></div>
-                        </div>
-                    </div>
-                    <div class="vp-transaction">
-                        <span class="vp-payment-avatar">MC</span>
-                        <div><strong>María C.</strong><span>Transferencia · VP-00128</span></div>
-                        <span class="vp-transaction-time">Hace unos instantes</span>
-                        <strong class="vp-transaction-amount">$ 2.500,00</strong>
-                        <span class="vp-verified"><span class="vp-status-dot"></span> Verificado</span>
-                    </div>
-                </div>
+        <div class="vp-product-stage" data-screenshot-carousel role="group" aria-label="Capturas de VerificaPay">
+            <div class="vp-screenshot-frame" aria-live="off">
+                <img
+                    class="vp-screenshot is-active"
+                    src="<?= asset_url('img/landing/screenshots/' . rawurlencode('example using page.jpeg')) ?>"
+                    alt="VerificaPay en modo claro"
+                    width="1600"
+                    height="531">
+                <img
+                    class="vp-screenshot"
+                    src="<?= asset_url('img/landing/screenshots/' . rawurlencode('example using page on dark mode.jpeg')) ?>"
+                    alt="VerificaPay en modo oscuro"
+                    width="1600"
+                    height="529"
+                    aria-hidden="true">
             </div>
-            <div class="vp-floating-proof">
-                <span><i class="bi bi-shield-check"></i></span>
-                <div>De la duda a la certeza.<small>Información que te permite avanzar.</small></div>
+            <div class="vp-screenshot-controls" role="group" aria-label="Elegir tema de la captura">
+                <button type="button" data-screenshot-target="0" aria-pressed="true">
+                    <i class="bi bi-sun" aria-hidden="true"></i> Modo claro
+                </button>
+                <button type="button" data-screenshot-target="1" aria-pressed="false">
+                    <i class="bi bi-moon-stars" aria-hidden="true"></i> Modo oscuro
+                </button>
             </div>
         </div>
 
